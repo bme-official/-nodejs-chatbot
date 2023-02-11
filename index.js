@@ -77,3 +77,8 @@ client.on(Events.MessageCreate, async (message) => {
 
 process.env.OPENAI_KEY;
 process.env.BOT_TOKEN;
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
