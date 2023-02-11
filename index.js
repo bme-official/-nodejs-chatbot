@@ -22,24 +22,26 @@ client.once(Events.ClientReady,(clientUser) => {
 
 client.login(process.env.BOT_TOKEN)
 
-const BOT_CHANNEL = "1072473616983269386"
-const BOT_CHANNEL2 = "1072857977477939301"
-const BOT_CHANNEL3 = "1072860713170780200"
-const BOT_CHANNEL4 = "1072860834100936706"
-const BOT_CHANNEL5 = "1072861258937802873"
-const BOT_CHANNEL6 = "1073160665956618310"
-const BOT_CHANNEL7 = "1073199104479465502"
+const MASTER = "1073951883674259516"
+const GRAMMAR = "1072473616983269386"
+const SPEAKING = "1072857977477939301"
+const READING = "1072860713170780200"
+const WRITING = "1072860834100936706"
+const VOCABULARY = "1072861258937802873"
+const MILIA_BURGER = "1073160665956618310"
+const REAL_ESTATE = "1073199104479465502"
 const PAST_MESSAGES = 5
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return
-    if (message.channel.id !== BOT_CHANNEL 
-        && message.channel.id !== BOT_CHANNEL2
-        && message.channel.id !== BOT_CHANNEL3 
-        && message.channel.id !== BOT_CHANNEL4 
-        && message.channel.id !== BOT_CHANNEL5
-        && message.channel.id !== BOT_CHANNEL6
-        && message.channel.id !== BOT_CHANNEL7) return
+    if (message.channel.id !== MASTER 
+        && message.channel.id !== GRAMMAR
+        && message.channel.id !== SPEAKING
+        && message.channel.id !== READING 
+        && message.channel.id !== WRITING 
+        && message.channel.id !== VOCABULARY
+        && message.channel.id !== MILIA_BURGER
+        && message.channel.id !== REAL_ESTATE) return
 
     message.channel.sendTyping()
 
