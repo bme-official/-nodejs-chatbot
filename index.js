@@ -74,3 +74,8 @@ client.on(Events.MessageCreate, async (message) => {
     console.log("response", response.data.choices[0].text)
     await message.channel.send(response.data.choices[0].text)
 })
+
+process.env.OPENAI;
+process.env.OPENAI_KEY;
+process.env.BOT;
+process.env.BOT_TOKEN;
