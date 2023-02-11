@@ -23,6 +23,7 @@ client.once(Events.ClientReady,(clientUser) => {
 client.login(process.env.BOT_TOKEN)
 
 const MASTER = "1073951883674259516"
+const GREETINGS = "1070936693374459937"
 const GRAMMAR = "1072473616983269386"
 const SPEAKING = "1072857977477939301"
 const READING = "1072860713170780200"
@@ -35,6 +36,7 @@ const PAST_MESSAGES = 5
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return
     if (message.channel.id !== MASTER 
+        && message.channel.id !== GREETINGS
         && message.channel.id !== GRAMMAR
         && message.channel.id !== SPEAKING
         && message.channel.id !== READING 
