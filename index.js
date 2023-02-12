@@ -76,9 +76,7 @@ client.on(Events.MessageCreate, async (message) => {
     })
 
     console.log("response", response.data.choices[0].text)
-    await message.channel.send(
-        response.data.choices[0].text.split("\n").map(line => `    ${line}`).join("\n")
-    )
+    await message.channel.send(response.data.choices[0].text)
 })
 
 process.env.OPENAI_KEY;
