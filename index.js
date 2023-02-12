@@ -76,11 +76,9 @@ client.on(Events.MessageCreate, async (message) => {
     })
 
     console.log("response", response.data.choices[0].text)
-    let responseText = response.data.choices[0].text
-    if(responseText.includes("\n")){
-        responseText = responseText.split("\n").map(line => `• ${line}`).join("\n")
-    }
-    await message.channel.send(responseText)
+    await message.channel.send(
+        response.data.choices[0].text.split("\n").map(line => `    ${line}`).join("\n")
+    )
 })
 
 process.env.OPENAI_KEY;
@@ -92,3 +90,9 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
+function indentMessage(text) {
+    return text.split('\n').map(line => `    ${line}`).join('\n');
+  }
+  
+  await message.channel.send(indentMessage(response.data.choices[0].text));
