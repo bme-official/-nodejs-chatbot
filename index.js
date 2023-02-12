@@ -76,10 +76,7 @@ client.on(Events.MessageCreate, async (message) => {
     })
 
     console.log("response", response.data.choices[0].text)
-    const responseText = response.data.choices[0].text
-    let message = responseText.split("\n").join("\n\n") // split on new line character and join with double new line character
-
-    await message.channel.send(message)
+    await message.channel.send(response.data.choices[0].text)
 })
 
 process.env.OPENAI_KEY;
