@@ -63,7 +63,7 @@ client.on(Events.MessageCreate, async (message) => {
     for (let i = messages.length - 1; i >= 0; i--) {
         const m = messages[i]
         const displayName = m.member ? m.member.displayName : "";
-        prompt += `${displayName}: ${m.content}\n`
+        prompt += `${displayName}: ${m.content}\n\n\n`
     }
     prompt += `${client.user.username}:`
     console.log("prompt:", prompt)
@@ -72,7 +72,7 @@ client.on(Events.MessageCreate, async (message) => {
         prompt,
         model: "text-davinci-003",
         max_tokens: 2048,
-        stop: ["\n"]
+        stop: ["\n\n\n"]
     })
 
     console.log("response", response.data.choices[0].text)
