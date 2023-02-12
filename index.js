@@ -63,9 +63,9 @@ client.on(Events.MessageCreate, async (message) => {
     for (let i = messages.length - 1; i >= 0; i--) {
         const m = messages[i]
         const displayName = m.member ? m.member.displayName : "";
-        prompt += `${displayName}: ${m.content}\n`
+        prompt += `\t${displayName}: ${m.content}\n` //added tab character here
     }
-    prompt += `${client.user.username}:`
+    prompt += `\t${client.user.username}:` //added tab character here
     console.log("prompt:", prompt)
 
     const response = await openai.createCompletion({
