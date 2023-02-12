@@ -71,8 +71,7 @@ client.on(Events.MessageCreate, async (message) => {
     const response = await openai.createCompletion({
         prompt,
         model: "text-davinci-003",
-        max_tokens: 2048,
-        stop: ["\n"]
+        max_tokens: 2048
     })
 
     console.log("response", response.data.choices[0].text)
