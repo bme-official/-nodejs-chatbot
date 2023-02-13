@@ -31,7 +31,7 @@ const WRITING = "1072860834100936706"
 const VOCABULARY = "1072861258937802873"
 const MILIA_BURGER = "1073160665956618310"
 const REAL_ESTATE = "1073199104479465502"
-const PAST_MESSAGES = 5
+const PAST_MESSAGES = 10
 
 client.on(Events.MessageCreate, async (message) => {
     if (message.author.bot) return
